@@ -1,2 +1,2 @@
-# goit-react-hw-05-phonebook
-Repo for HW 5 (phonebook)
+# goit-react-hw-06-phonebook
+Repo for HW 6 (phonebook)
