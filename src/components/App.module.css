@@ -1,0 +1,29 @@
+.container {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  border: 2px solid darkblue;
+  border-radius: 4px;
+  background-color: rgba(180, 214, 241, 0.692);
+}
+
+.mainHeader {
+  color: rgb(13, 11, 150);
+  margin-bottom: 20px;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.additionalHeader {
+  color: indigo;
+  margin-bottom: 10px;
+  font-size: 36px;
+  font-weight: 500;
+}

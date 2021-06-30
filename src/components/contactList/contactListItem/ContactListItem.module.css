@@ -1,0 +1,33 @@
+.contactItem {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.contactItem:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.contactName {
+  color: rgb(15, 12, 189);
+  font-size: 22px;
+}
+
+.contactNumber {
+  color: black;
+  margin-left: 5px;
+}
+
+.deleteContactBtn {
+  font-family: "Dancing Script", cursive;
+  font-size: 12px;
+  width: 55px;
+  color: white;
+  background-color: rgb(89, 89, 199);
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 5px;
+  transition: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.deleteContactBtn:hover {
+  background-color: rgb(180, 180, 226);
+}

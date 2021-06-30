@@ -1,0 +1,18 @@
+.filterInputLabel {
+  color: black;
+  font-size: 24px;
+  border-radius: 4px;
+  font-weight: 400;
+}
+
+.filterInput {
+  margin-bottom: 10px;
+  padding: 3px 10px;
+  height: 25px;
+  color: blueviolet;
+  background-color: rgba(204, 207, 252, 0.404);
+  border-radius: 10px !important;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
