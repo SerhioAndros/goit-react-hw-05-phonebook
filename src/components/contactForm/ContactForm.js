@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import styles from "./ContactForm.module.css";
+import { connect } from "react-redux";
+import { addContact } from "../redux/contacts-actions";
 
 class ContactForm extends Component {
   state = {
@@ -42,7 +44,7 @@ class ContactForm extends Component {
           id={uniqueIdName}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
-          required
+          // required
           value={this.state.name}
           onChange={this.handleInputChange}
           placeholder="Name"
@@ -57,7 +59,7 @@ class ContactForm extends Component {
           id={uniqueIdNumber}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
-          required
+          // required
           value={this.state.number}
           onChange={this.handleInputChange}
           placeholder="Tel. number"
@@ -72,14 +74,11 @@ class ContactForm extends Component {
 }
 
 ContactForm.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default ContactForm;
+const mapDispatchToProps = (dispatch) => ({
+  onSubmit: (object) => dispatch(addContact(object)),
+});
+
+export default connect(null, mapDispatchToProps)(ContactForm);
