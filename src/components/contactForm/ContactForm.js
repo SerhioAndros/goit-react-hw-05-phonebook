@@ -19,8 +19,13 @@ class ContactForm extends Component {
   handleSubmit = (evt) => {
     evt.preventDefault();
     const { name, number } = this.state;
+    const contacts = this.props.contacts;
     if (!name.trim() || !number.trim())
       return alert("You've missed something :)");
+    if (contacts.map((contact) => contact.name).includes(name.trim()))
+      return alert(`"${name.trim()}" is already in contacts`);
+    if (contacts.map((contact) => contact.number).includes(number.trim()))
+      return alert(`"${number.trim()}" is already in contacts`);
 
     this.props.onSubmit(this.state);
     this.setState({
@@ -77,8 +82,12 @@ ContactForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
+const mapStateToProps = (state) => ({
+  contacts: state.contacts.contactItems,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   onSubmit: (object) => dispatch(addContact(object)),
 });
 
-export default connect(null, mapDispatchToProps)(ContactForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
