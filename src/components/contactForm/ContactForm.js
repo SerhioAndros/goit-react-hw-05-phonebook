@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import styles from "./ContactForm.module.css";
 import { connect } from "react-redux";
-import { addContact } from "../redux/contacts-actions";
+import { addContact } from "../../redux/contacts-actions";
 
 class ContactForm extends Component {
   state = {

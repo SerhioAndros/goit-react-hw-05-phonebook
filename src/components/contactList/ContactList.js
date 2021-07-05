@@ -3,7 +3,7 @@ import ContactListItem from "./contactListItem/ContactListItem";
 import PropTypes from "prop-types";
 import styles from "./ContactList.module.css";
 import { connect } from "react-redux";
-import { deleteContact } from "../redux/contacts-actions";
+import { deleteContact } from "../../redux/contacts-actions";
 
 const ContactList = ({ contacts, onClick }) => (
   <ul className={styles.contactList}>
@@ -39,7 +39,7 @@ const handleFilter = (allContacts, filter) => {
 
 const mapStateToProps = (state) => {
   const { contactItems, contactFilter } = state.contacts;
-  if (contactFilter === "") {
+  if (!contactFilter) {
     return { contacts: contactItems };
   }
   const filteredContacts = handleFilter(contactItems, contactFilter);
